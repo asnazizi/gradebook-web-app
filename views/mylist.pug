@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title My Courses
+    link(rel="stylesheet", href="/static/styles.css")
+    h1 Course Information
+    h3 Retrieve continous assessment scores for:
+  body
+    .mylist-body 
+      if courses.length > 0
+        ul
+          each course in courses
+            li
+              a(href=`/courseinfo/getscore?course=${course}`)= course
+      else
+        p No courses available.

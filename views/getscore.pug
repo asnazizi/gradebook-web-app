@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= course 
+    link(rel="stylesheet", href="/static/styles.css")
+  body
+  .getscore-body
+        h1= course + ' - Gradebook'
+
+        if scores && scores.length > 0
+            table(border="1")
+                thead
+                    tr
+                        th Item
+                        th Score
+                tbody
+                    each score in scores
+                        tr
+                            td= score.item
+                            td= score.score
+        else
+            h3= message
+
+        a(href="/courseinfo/mylist") Back to Course List
+

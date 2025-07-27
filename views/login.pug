@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Assignment 4
+    link(rel="stylesheet", href="/static/styles.css")
+    h1 Gradebook Accessing Page
+  body
+    .form-container
+      h2 My Gradebooks
+      form(action="/login", method="POST")
+        .form-group
+          label(for="email") Email:
+          input(type="email", name="email", placeholder="Enter your HKU email", pattern=".+@cs\.hku\.hk$|.+@connect\.hku\.hk$", oninvalid="this.setCustomValidity('Must be an email address with @cs.hku.hk or @connect.hku.hk')" oninput="this.setCustomValidity('')" required)
+        button(type="submit") Login
+    p.message(style=`display: ${messageDisplay}; background-color: ${messageBackgroundColor}`)= message
